@@ -1,0 +1,1 @@
+Plays standard 10 card gin.  Javascript - PhoneGap - Android
