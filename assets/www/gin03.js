@@ -1412,4 +1412,11 @@ function initCntrls(){
 }
 
 
+setClickHandler( "infoBut", infoFun );
+setClickHandler( "discardBut", discardFun );
+setClickHandler( "passBut", passFun );
+setClickHandler( "pickupBut", pickupFun );
+setClickHandler( "knockBut", knockFun );
+setClickHandler( "newBut", newFun );
+setClickHandler( "revealBut", revealFun );
 
