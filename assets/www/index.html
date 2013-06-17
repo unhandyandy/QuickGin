@@ -4,18 +4,83 @@
 <script type="text/javascript" src="./mydefs.js"></script>
 <script type="text/javascript" src="./gin03.js"></script>
 
+<link href="./style.css" rel="stylesheet">
+
 </head>
 <body style="background-color:DarkOliveGreen">
 <br>
-<div id="scoreButDiv" style="float:left">
+
+<div style="display:inline-block;margin-left:20%;">
+<input type='button' class="button" value='Instructions'
+style='width:12.0ex;background-color:DarkGreen;height:1.5em;font-size:medium;'
+id='infoBut'></input>
 </div>
-<div id="divScore" style="font-size:large">
+
+<br><br><br>
+
+<div id="scoreDisplay" style="display:table-cell;width:90%;">
+<div id="scoreButDiv" style="float:left;display:inline-block;height:4em;width:15%;">
+</div>
+
+<div id="divScore" style="font-size:large;float:left;display:inline-block;height:4em;width:80%">
+</div>
 </div>
 <div id="divTable" style="clear:left">
 </div>
+<br>
 
-<div id="divCtrls">
+<div id="divCtrls" >
+
+<div class="leftButton">Discard:</div>
+<div class="rightButton">Pick up:</div>
+
+<br>
+
+<div class="cardButton leftButton">
+<input type='button'  value='L' style='width:2em;background-color:Chartreuse;height:2em;font-size:large;'
+id='discardBut'></input>
 </div>
+
+<div class="middleButton">
+<input type='button'
+value='Draw/Pass'
+style='width:12.0ex;background-color:White;height:2.0em;font-size:medium;'
+id='passBut'></input>
+</div>
+
+<div class="cardButton rightButton">
+<input type='button'   value='R' style='width:2em;background-color:Chartreuse;height:2.0em;font-size:large;'
+id='pickupBut'></input>
+</div>
+
+
+<br><br><br>
+
+<div class="leftButton">
+<input type='button'  value='Knock' style='width:8ex;background-color:Silver;height:2.0em;font-size:medium;'
+id='knockBut'></input>
+</div>
+
+<div class="middleButton">
+<input type='button'  value='New Hand'
+style='width:12.0ex;background-color:Silver;height:2.0em;font-size:medium;'
+id='newBut'></input>
+</div>
+
+
+<div
+class="rightButton">
+<input type='button' class="button" value='Reveal
+Hidden'
+style='width:12.0ex;background-color:DarkGreen;height:4em;font-size:medium;'
+id='revealBut'></input>
+</div>
+
+
+
+</div>
+
+
 <br style="clear:left"><br>
 <div id="messages" style="font-size:medium;float:left">
 </div>

@@ -1168,7 +1168,7 @@ function makeSuitRow(st, idpre) {
     };
     for (i=0;i<13;i++) {
 	crdtxt = idpre + String(i) + "_" + String(st);
-	res += makeTag("td", makeButton("", crdtxt, mkfnc( i, st ), "100%","2em", "large"));
+	res += makeTag("td", makeButton("", crdtxt, mkfnc( i, st ), "3ex", "2em", "large"));
     }
     return res;
 }
@@ -1187,7 +1187,7 @@ function makeCardTable (idpre) {
     "use strict";
     var colsty, tableTxt; 
     colsty =   "<colgroup><col span='13' style='background-color:green' width='1*' /></colgroup>";
-    tableTxt = makeTag("table", colsty + makeSuitRowsAll(idpre), "width='100%';");
+    tableTxt = makeTag("table", colsty + makeSuitRowsAll(idpre));
     //document.write(tableTxt);
     return tableTxt;
 }
@@ -1394,6 +1394,24 @@ function initTable(){
 setTimeout(initTable,100);
 
 
+var htmltxt = '';
+htmltxt += '<div style="vertical-align:left;margin-left:13%;float:left">Discard:</div>';
+htmltxt += '<div style="vertical-align:left;margin-left:30%;float:left"> </div>';
+htmltxt += '<div style="vertical-align:left;margin-left:50%;">Pick up:</div>';
+
+htmltxt += '<div style="vertical-align:left;margin-left:13%;clear:left;float:left">' +makeButton("","discardBut",discardFun,"3ex","2.0em","large") + '</div>';
+
+htmltxt += '<div style="vertical-align:left;margin-left:6%;float:left">' + makeButton("Draw/Pass","passBut",passFun,"14.0ex","2.0em","medium", "White") + '</div>';
+
+htmltxt += '<div style="vertical-align:left;margin-left:50%;">' + makeButton("","pickupBut",pickupFun,"3ex","2.0em","large") + '</div>';
+
+htmltxt += repeatTxt("<br>",1);
+
+htmltxt += '<div style="vertical-align:left;margin-left:5%;clear:left;float:left">' + makeButton("Knock","knockBut",knockFun,"8ex","2.0em","medium","Silver" ) + '</div>';
+htmltxt += repeatTxt("&nbsp;",36);
+htmltxt += '<div style="vertical-align:left;margin-left:7%;float:left">' + makeButton("New Hand","newBut",newFun,"12.0ex","2.0em","medium", "Silver" ) + '</div>';
+htmltxt += repeatTxt("&nbsp;",64);
+htmltxt += '<div style="vertical-align:left;margin-left:12%;float:left;margin-top:0em">' + makeButton("Reveal\nHidden","revealBut",showDeck,"12.0ex","4em","medium","DarkGreen" ) + '</div>';
 
 var infoText = "The card in light gray is at the top of the discard pile; the card in dark gray was picked up by the computer.  To pick up a card click it either in the table or the \"Pick up\" button below.  To discard first select a card it by clicking it in the table, then discard it by either clicking it again in the table or the \"Discard\" button below. To knock, first select your discard then click the \"Knock\" button.  \"Reveal Hidden\" shows you the computer's hand; clicking on \"Score\" resets the scores to 0.  Games are to 150 points, each hand is worth 25 points.";
 
@@ -1403,6 +1421,7 @@ function infoFun(  ){
     window.alert( infoText );
 }
 
+htmltxt += '<div style="vertical-align:left;margin-left:7%;float:left;margin-top:0em">' + makeButton( "Instructions", "infoBut", infoFun, "12.0ex", "1.5em", "medium", "DarkGreen" ) + '</div>';
 
 //htmltxt += "</font>";
 
@@ -1410,6 +1429,6 @@ function initCntrls(){
     "use strict";
     setDiv( "divCtrls", htmltxt );
 }
-
+setTimeout(initCntrls,100);
 
 
